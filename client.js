@@ -6,6 +6,10 @@ const connect = function() {
     port: 50541
   });
 
+  conn.on("connect", () => {
+    conn.write("Name: NDF");
+  });
+
   conn.setEncoding("utf8");
 
   conn.on("connect", (connect) => {
@@ -17,7 +21,7 @@ const connect = function() {
     console.log(data);
   });
 
-  
+
   
   return conn;
 };
