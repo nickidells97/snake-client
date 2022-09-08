@@ -8,10 +8,16 @@ const connect = function() {
 
   conn.setEncoding("utf8");
 
+  conn.on("connect", (connect) => {
+    console.log("Connection Successful!!");
+  });
+
   //Logs message from the server once kicked for being idle
   conn.on("data", (data) => {
     console.log(data);
   });
+
+  
   
   return conn;
 };
