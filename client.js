@@ -6,14 +6,23 @@ const connect = function() {
     port: 50541
   });
 
-  conn.on("connect", () => {
-    conn.write("Name: NDF");
-  });
-
   conn.setEncoding("utf8");
 
-  conn.on("connect", (connect) => {
-    console.log("Connection Successful!!");
+  // function move1() {
+  //   conn.write("Move: up");
+  // };
+  // function move2() {
+  //   conn.write("Move: left");
+  // };
+
+  conn.on("connect", () => {
+    console.log("Connection Successful!!")
+    conn.write("Name: NDF");
+    // setTimeout(move1, 500);
+    // setTimeout(move2, 1000)
+    // setTimeout(move1, 1500)
+    // setTimeout(move1, 2000)
+    // setTimeout(move1, 2500)
   });
 
   //Logs message from the server once kicked for being idle
