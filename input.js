@@ -5,16 +5,25 @@ const handleUserInput = function(key) {
     process.exit();
   }
   if (key === 'w') {
-    connection.write('Move: up');
+    connection.write('Move: up'), 500;
   }
   if (key === 'a') {
-    connection.write('Move: left');
+    connection.write('Move: left'), 500;
   }
   if (key === 's') {
-    connection.write('Move: down');
+    connection.write('Move: down'), 500;
   }
   if (key === 'd') {
-    connection.write('Move: right');
+    connection.write('Move: right'), 500;
+  }
+  if (key === 'q') {
+    connection.write("Say: Hello!!");
+  }
+  if (key === 'e') {
+    connection.write("Say: I'm better!!");
+  }
+  if (key === 'f') {
+    connection.write("Say: F in chat boys");
   }
 };
 
