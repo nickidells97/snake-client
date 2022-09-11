@@ -1,5 +1,5 @@
 const net = require('net');
-const {IP, PORT, ENCODING} = require('./constants');
+const {IP, PORT, ENCODING, NAME} = require('./constants');
 
 
 const connect = function() {
@@ -11,8 +11,8 @@ const connect = function() {
   conn.setEncoding(ENCODING);
 
   conn.on("connect", () => {
-    console.log("Connection Successful!!")
-    conn.write("Name: NDF");
+    console.log("Connection Successful!!");
+    conn.write(`Name: ${NAME}`);
   });
 
   //Logs message from the server once kicked for being idle
@@ -23,6 +23,5 @@ const connect = function() {
 };
 
 module.exports = {
-  connect,
-  net
+  connect
 };
